@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <h1>Eat Da Burger</h1>
+    <img src="https://lh3.googleusercontent.com/proxy/Erhl0MJVQGFHBNM-8mHL19ErG-Y_9zOv1Yhrqwu4C1FkjpJDnnfRm_jScCUMD6of-r5GiJzX8NcJXfQBTOmAovgHJKmJpb2h5pLMtLQqS2mrHNAq-g7hAkHPGNHKZtBqbTUzimrgzbNRNFiVflY5XQYkO8U9vJrclbYQG7mDzVdiiH0" alt="drawing of a burger">
+  </div>
+  <div class="row">
+    <div class="col s12 m6">
+      <h2>Burgers to Eat!!!</h2>
+      <ul>
+        {{#each burgers}}
+          {{#unless devoured}}
+            {{> burger-block }}
+          {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col s12 m6">
+      <h2>Burgers Eaten!!</h2>
+      <ul>
+        {{#each burgers}}
+          {{#if devoured}}
+            {{> burger-block }}
+          {{/if}}
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+
+  <div class="row">
+    <h2>Add a Burger</h2>
+    <div class="row">
+      <form class="create-form">
+        <div class="col s12 m10 form-group">
+          <label for="ca">Burger Name:</label>
+          <input type="text" id="ca" name="name">
+        </div>
+        <div class="col s12 m2">
+          <button type="submit" class="addBurger">Add Burger</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</div>
