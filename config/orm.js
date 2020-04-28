@@ -1,29 +1,27 @@
-const connection = require("./connection");
+const connection = require("./connection")
 
 let orm = {
-    selectAll: function(tableName){
+    selectAll: function(tableName, cb){
         let queryString = `SELECT * FROM ${ tableName }`
-        connection.query(queryString, callback)
+        connection.query(queryString, function(err, res) {
+            if(err) throw err
+            cb(res);
+        })
     },
-    insertOne: function(tableName, options){
+    insertOne: function(tableName, options, cb){
         let queryString = `INSERT INTO ${ tableName } SET ${ options }`
-        connection.query(queryString, callback)
+        connection.query(queryString, function(err, res) {
+            if(err) throw err
+            cb(res);
+        })
     },
-    updateOne: function(tableName, setColAndValue, whereCondition){
+    updateOne: function(tableName, setColAndValue, whereCondition, cb){
         let queryString = `UPDATE ${ tableName } SET ${ setColAndValue } WHERE ${ whereCondition }`
-        connection.query(queryString, callback)
+        connection.query(queryString, function(err, res) {
+            if(err) throw err
+            cb(res);
+        })
     }
 }
 
-function callback(err, res) {
-    if(err) {
-      console.log('Error!')
-      console.log(err)
-    }
-    else {
-      console.table(res)
-      console.log('Query successful.')
-    }
-}
-
-module.exports = orm;
+module.exports = orm
