@@ -9,9 +9,15 @@ img {
     margin: 0 auto;
     width: 50%;
 }
-.addBurger {
+/* .addBurger {
     height: 50px;
-}
+} */
 button:hover {
     background-color: gray;
+}
+ul, button {
+    font-size: 30px;
+}
+button {
+    cursor: pointer;
 }
