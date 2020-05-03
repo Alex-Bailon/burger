@@ -1,5 +1,5 @@
 const connection = require("./connection")
-
+//orm for the three request types we will be using for this project
 let orm = {
     selectAll: function(tableName, cb){
         let queryString = `SELECT * FROM ${ tableName }`
